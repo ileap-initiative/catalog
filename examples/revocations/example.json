@@ -1,6 +1,6 @@
 {
-  "_comment": "EXAMPLE ONLY — not a real revocation. All fields are illustrative. The file should be named {certification_id}.json.",
-  "certification_id": "00000000-0000-0000-0000-000000000000",
+  "_comment": "EXAMPLE ONLY — not a real revocation. All fields are illustrative. The file should be named {approval_id}.json.",
+  "approval_id": "00000000-0000-0000-0000-000000000000",
   "revocation_date": "2026-09-15",
   "reason": "sfc_cert_lapsed",
   "notes": "Provider did not renew their SFC Certification by the required renewal date."

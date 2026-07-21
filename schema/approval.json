@@ -1,32 +1,32 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/sine-fdn/ileap-certified/main/schema/certification.json",
-  "title": "iLEAP Certification Record",
-  "description": "An immutable iLEAP certification record issued when a tool passes the iLEAP conformance testing process.",
+  "$id": "https://raw.githubusercontent.com/ileap-initiative/catalog/main/schema/approval.json",
+  "title": "iLEAP Approval Record",
+  "description": "An immutable iLEAP approval record issued when a tool passes the iLEAP conformance testing process.",
   "type": "object",
-  "required": ["uuid", "tool_id", "certification", "test_evidence"],
+  "required": ["uuid", "tool_id", "approval", "test_evidence"],
   "additionalProperties": false,
   "properties": {
     "uuid": {
       "type": "string",
       "format": "uuid",
-      "description": "Globally unique identifier for this certification record (UUID v4). Used as the filename."
+      "description": "Globally unique identifier for this approval record (UUID v4). Used as the filename."
     },
     "tool_id": {
       "type": "string",
       "format": "uuid",
-      "description": "UUID of the tool being certified. Must match the 'uuid' field in the corresponding tool record (tools/{tool_id}.json)."
+      "description": "UUID of the tool being approved. Must match the 'uuid' field in the corresponding tool record (tools/{tool_id}.json)."
     },
-    "certification": {
+    "approval": {
       "type": "object",
-      "description": "Details of the iLEAP certification granted.",
+      "description": "Details of the iLEAP approval granted.",
       "required": ["standard", "standard_version", "date", "valid_until", "outcome", "data_transactions"],
       "additionalProperties": false,
       "properties": {
         "standard": {
           "type": "string",
           "const": "iLEAP Technical Specifications",
-          "description": "The standard against which the tool was certified."
+          "description": "The standard against which the tool was approved."
         },
         "standard_version": {
           "type": "string",
@@ -35,17 +35,17 @@
         "date": {
           "type": "string",
           "format": "date",
-          "description": "ISO 8601 date when certification was granted."
+          "description": "ISO 8601 date when approval was granted."
         },
         "valid_until": {
           "type": "string",
           "format": "date",
-          "description": "ISO 8601 date until which this certification is valid (1 year from certification date). Also conditional on the provider's SFC Certification being renewed — see the tool record."
+          "description": "ISO 8601 date until which this approval is valid (1 year from approval date). Also conditional on the provider's SFC Certification being renewed — see the tool record."
         },
         "outcome": {
           "type": "string",
           "const": "Passed",
-          "description": "Overall certification outcome. Always 'Passed' — failed attempts are not recorded in this registry."
+          "description": "Overall approval outcome. Always 'Passed' — failed attempts are not recorded in this catalog."
         },
         "data_transactions": {
           "type": "array",
@@ -64,7 +64,7 @@
               "status": {
                 "type": "string",
                 "enum": ["tested", "not_tested", "out_of_scope"],
-                "description": "'tested': included in the test run and passed. 'not_tested': applicable but not tested (valid for optional DTs only). 'out_of_scope': not applicable to this certification."
+                "description": "'tested': included in the test run and passed. 'not_tested': applicable but not tested (valid for optional DTs only). 'out_of_scope': not applicable to this approval."
               }
             }
           },
@@ -95,7 +95,7 @@
     },
     "test_evidence": {
       "type": "object",
-      "description": "References to the conformance test runs that evidence this certification.",
+      "description": "References to the conformance test runs that evidence this approval.",
       "required": ["act_run_id", "act_timestamp", "basepath"],
       "additionalProperties": false,
       "properties": {
@@ -120,7 +120,7 @@
         },
         "exceptions": {
           "type": "array",
-          "description": "Test cases that did not succeed (Skipped, Failed, or InternalError), each with a rationale explaining why this does not prevent certification. Omitted when all tests passed.",
+          "description": "Test cases that did not succeed (Skipped, Failed, or InternalError), each with a rationale explaining why this does not prevent approval. Omitted when all tests passed.",
           "minItems": 1,
           "items": {
             "type": "object",
@@ -142,7 +142,7 @@
               },
               "rationale": {
                 "type": "string",
-                "description": "Explanation of why this non-passing result does not prevent certification."
+                "description": "Explanation of why this non-passing result does not prevent approval."
               }
             }
           }

@@ -1,7 +1,7 @@
 {
   "uuid": "21697d02-38db-400c-b029-3947e1d61fcb",
   "tool_id": "1ddb959b-9a46-48d7-a104-4f4b697e7c04",
-  "certification": {
+  "approval": {
     "standard": "iLEAP Technical Specifications",
     "standard_version": "1.0.0",
     "date": "2026-03-19",
@@ -24,7 +24,7 @@
         "tc_id": "pact-tc-019",
         "title": "PACT Test Case 19: OpenId connect-based authentication flow with incorrect credentials",
         "outcome": "Failed",
-        "rationale": "The test failed due to a bug in the PACT Conformance Service: requests were sent to the basepath instead of the /auth/token endpoint, causing the tool to return 200 with HTML. This bug was fixed in the development branch but was not available at the time of testing. Since the tool's authentication implementation is working correctly, this test failure does not prevent certification."
+        "rationale": "The test failed due to a bug in the PACT Conformance Service: requests were sent to the basepath instead of the /auth/token endpoint, causing the tool to return 200 with HTML. This bug was fixed in the development branch but was not available at the time of testing. Since the tool's authentication implementation is working correctly, this test failure does not prevent approval."
       }
     ]
   }

@@ -1,7 +1,7 @@
 {
   "uuid": "255910c5-7de7-48cc-b669-c2114ffd292c",
   "tool_id": "db9b9cea-253f-4f65-99c4-1b744c703f3e",
-  "certification": {
+  "approval": {
     "standard": "iLEAP Technical Specifications",
     "standard_version": "1.0.0",
     "date": "2026-03-18",
@@ -24,13 +24,13 @@
         "tc_id": "pact-tc-013",
         "title": "PACT Test Case 13: Received Request Fulfilled Response",
         "outcome": "Skipped",
-        "rationale": "Since Action Events are optional in PACT v2.2, skipping this test does not prevent iLEAP certification."
+        "rationale": "Since Action Events are optional in PACT v2.2, skipping this test does not prevent iLEAP approval."
       },
       {
         "tc_id": "pact-tc-014.B",
         "title": "PACT Test Case 14.B: Received Request Rejected Response",
         "outcome": "Skipped",
-        "rationale": "Since Action Events are optional in PACT v2.2, skipping this test does not prevent iLEAP certification."
+        "rationale": "Since Action Events are optional in PACT v2.2, skipping this test does not prevent iLEAP approval."
       }
     ]
   }
