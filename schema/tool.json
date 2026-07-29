@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/sine-fdn/ileap-certified/main/schema/tool.json",
+  "$id": "https://raw.githubusercontent.com/ileap-initiative/catalog/main/schema/tool.json",
   "title": "iLEAP Tool Record",
-  "description": "A record registering a tool and its provider in the iLEAP certification registry.",
+  "description": "A record registering a tool and its provider in the iLEAP Approval catalog.",
   "type": "object",
   "required": ["uuid", "provider", "software"],
   "additionalProperties": false,
@@ -10,7 +10,7 @@
     "uuid": {
       "type": "string",
       "format": "uuid",
-      "description": "Globally unique identifier for this tool record (UUID v4). Used as the filename and referenced by certification records."
+      "description": "Globally unique identifier for this tool record (UUID v4). Used as the filename and referenced by approval records."
     },
     "provider": {
       "type": "object",
@@ -33,7 +33,7 @@
         },
         "sfc_certificate_number": {
           "type": "string",
-          "description": "SFC Certificate Number (e.g., 'SFC CRT 008'). Prerequisite for iLEAP certification."
+          "description": "SFC Certificate Number (e.g., 'SFC CRT 008'). Prerequisite for iLEAP Approval."
         },
         "sfc_certification_renewal_date": {
           "type": "string",

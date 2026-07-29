@@ -1,26 +1,26 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/sine-fdn/ileap-certified/main/schema/revocation.json",
-  "title": "iLEAP Certification Revocation Record",
-  "description": "An immutable record of the revocation of a previously granted iLEAP certification. The file is named after the UUID of the certification being revoked ({certification_id}.json).",
+  "$id": "https://raw.githubusercontent.com/ileap-initiative/catalog/main/schema/revocation.json",
+  "title": "iLEAP Approval Revocation Record",
+  "description": "An immutable record of the revocation of a previously granted iLEAP approval. The file is named after the UUID of the approval being revoked ({approval_id}.json).",
   "type": "object",
-  "required": ["certification_id", "revocation_date", "reason"],
+  "required": ["approval_id", "revocation_date", "reason"],
   "additionalProperties": false,
   "properties": {
-    "certification_id": {
+    "approval_id": {
       "type": "string",
       "format": "uuid",
-      "description": "UUID of the certification being revoked. Must match the 'uuid' field in the corresponding certification record. Also used as this file's name ({certification_id}.json)."
+      "description": "UUID of the approval being revoked. Must match the 'uuid' field in the corresponding approval record. Also used as this file's name ({approval_id}.json)."
     },
     "revocation_date": {
       "type": "string",
       "format": "date",
-      "description": "ISO 8601 date on which the certification was revoked."
+      "description": "ISO 8601 date on which the approval was revoked."
     },
     "reason": {
       "type": "string",
       "enum": ["sfc_cert_lapsed", "conformance_lost", "voluntary_withdrawal", "administrative"],
-      "description": "'sfc_cert_lapsed': provider did not renew their SFC Certification. 'conformance_lost': provider's implementation no longer conforms to the iLEAP Technical Specifications. 'voluntary_withdrawal': provider voluntarily withdrew from certification. 'administrative': revoked for administrative reasons."
+      "description": "'sfc_cert_lapsed': provider did not renew their SFC Certification. 'conformance_lost': provider's implementation no longer conforms to the iLEAP Technical Specifications. 'voluntary_withdrawal': provider voluntarily withdrew from approval. 'administrative': revoked for administrative reasons."
     },
     "notes": {
       "type": "string",

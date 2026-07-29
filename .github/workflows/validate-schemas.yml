@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     paths:
-      - 'certifications/*.json'
+      - 'approvals/*.json'
       - 'revocations/*.json'
       - 'tools/*.json'
       - 'schema/*.json'
@@ -31,7 +31,7 @@ jobs:
         uses: tj-actions/changed-files@v44
         with:
           files: |
-            certifications/*.json
+            approvals/*.json
             revocations/*.json
             tools/*.json
 
@@ -40,9 +40,9 @@ jobs:
         run: |
           EXIT_CODE=0
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            if [[ $file == certifications/*.json ]]; then
-              echo "Validating certification: $file"
-              ajv validate -s schema/certification.json -d "$file" --spec=draft2020 -c ajv-formats || EXIT_CODE=$?
+            if [[ $file == approvals/*.json ]]; then
+              echo "Validating approval: $file"
+              ajv validate -s schema/approval.json -d "$file" --spec=draft2020 -c ajv-formats || EXIT_CODE=$?
             elif [[ $file == revocations/*.json ]]; then
               echo "Validating revocation: $file"
               ajv validate -s schema/revocation.json -d "$file" --spec=draft2020 -c ajv-formats || EXIT_CODE=$?
@@ -58,7 +58,7 @@ jobs:
         run: |
           echo "❌ JSON Schema validation failed!"
           echo "Please ensure all JSON files match their corresponding schema:"
-          echo "- certifications/*.json → schema/certification.json"
+          echo "- approvals/*.json → schema/approval.json"
           echo "- revocations/*.json → schema/revocation.json"
           echo "- tools/*.json → schema/tool.json"
           exit 1
