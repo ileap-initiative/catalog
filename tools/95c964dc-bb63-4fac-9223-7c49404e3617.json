@@ -1,0 +1,13 @@
+{
+  "uuid": "95c964dc-bb63-4fac-9223-7c49404e3617",
+  "provider": {
+    "name": "shipzero GmbH",
+    "contact_name": "shipzero GmbH",
+    "contact_email": "info@shipzero.com",
+    "sfc_certificate_number": "SFC CRT 003",
+    "sfc_certification_renewal_date": "2027-02-27"
+  },
+  "software": {
+    "name": "shipzero"
+  }
+}
