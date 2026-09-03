@@ -4,8 +4,8 @@
   "approval": {
     "standard": "iLEAP Technical Specifications",
     "standard_version": "1.0.0",
-    "date": "2026-08-13",
-    "valid_until": "2027-08-13",
+    "date": "2026-09-03",
+    "valid_until": "2027-09-03",
     "outcome": "Passed",
     "data_transactions": [
       { "id": "DT1", "status": "tested" },
